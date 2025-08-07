@@ -103,7 +103,7 @@
             font-family: 'Lobster', cursive;
             color: #8b5f69;
         }
-        
+
         /* Адаптация для мобильных устройств */
         @media (max-width: 600px) {
             .header h1 {
@@ -133,20 +133,20 @@
 
         <div class="intro">
             <p>
-                Сегодня уже <b>5 месяцев и 4 дня</b>, как ты делаешь мою жизнь невероятной. Кажется, что это совсем немного, но для меня это целая история. Я просто хотел напомнить, как сильно я тебя люблю.
+                Мы вместе уже <strong><span id="timeTogether"></span></strong>. Каждая секунда рядом с тобой — это счастье. Я просто хотел напомнить, как сильно я тебя люблю.
             </p>
         </div>
 
         <h2 class="facts-title">А пока мы были вместе...</h2>
 
         <div class="fact-card">
-            <img src="img/picture1.jpg">
+            <img src="photo_2025-06-26_18-22-51.jpg">
             <div class="text">
                 <h3>Наши сердца бились вместе</h3>
                 <p>За это время сердце каждого из нас совершило более <strong>31 миллиона</strong> ударов. И я счастлив, что они бьются вместе.</p>
             </div>
         </div>
-        
+
         <div class="fact-card">
             <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800">
             <div class="text">
@@ -154,9 +154,9 @@
                 <p>Пока мы были вместе, в нашей галактике родилось как минимум <strong>3 новые звезды</strong>. Но для меня самой яркой звездой остаешься ты.</p>
             </div>
         </div>
-        
+
         <div class="fact-card">
-            <img src="img/picture2.jpg">
+            <img src="photo_2025-08-02_22-38-19.jpg">
             <div class="text">
                 <h3>Мир стал больше</h3>
                 <p>На планете родилось более <strong>60 миллионов</strong> новых жизней. Это огромное число, но самая главная встреча в моей жизни уже произошла — встреча с тобой.</p>
@@ -167,6 +167,25 @@
             <p>С бесконечной любовью,<br>Твой Тима</p>
         </div>
     </div>
+
+    <script>
+        function updateTimer() {
+            const startDate = new Date('2025-03-02T00:00:00');
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            const formatted = `${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+            document.getElementById('timeTogether').textContent = formatted;
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
 
 </body>
 </html>
